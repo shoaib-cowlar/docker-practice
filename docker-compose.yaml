@@ -1,0 +1,14 @@
+services:
+  api:
+    build:
+      context: ./node-app
+      dockerfile: Dockerfile
+    image: node-api-img:1.0.0
+    ports:
+      - 5002:5002 
+    volumes:
+      - ./node-app:/app
+    environment:
+      - API_KEY=abcdefg
+      - OTHER_VAR=value
+  
